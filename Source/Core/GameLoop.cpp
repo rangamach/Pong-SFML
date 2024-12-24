@@ -24,6 +24,7 @@ void GameLoop::pollEvent()
 
 void GameLoop::update()
 {
+	gameplay_manager->update();
 }
 
 void GameLoop::render()

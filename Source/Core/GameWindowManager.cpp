@@ -2,13 +2,13 @@
 
 using namespace Core;
 
-void Core::GameWindowManager::createGameWindow()
+void GameWindowManager::createGameWindow()
 {
 	// Create the window with specified dimensions and title
 	game_window->create(VideoMode(1280,720), game_title, Style::Close | Style::Titlebar);
 }
 
-void Core::GameWindowManager::initialize()
+void GameWindowManager::initialize()
 {
 	// Allocate memory for the render window object
 	game_window = new RenderWindow();
@@ -16,23 +16,23 @@ void Core::GameWindowManager::initialize()
 	createGameWindow();
 }
 
-RenderWindow* Core::GameWindowManager::getGameWindow()
+RenderWindow* GameWindowManager::getGameWindow()
 {
 	return game_window;
 }
 
-bool Core::GameWindowManager::isGameRunning()
+bool GameWindowManager::isGameRunning()
 {
 	// Return true if window is open, false if closed
 	return game_window->isOpen();
 }
 
-void Core::GameWindowManager::clearWindow()
+void GameWindowManager::clearWindow()
 {
 	game_window->clear();
 }
 
-void Core::GameWindowManager::displayWindow()
+void GameWindowManager::displayWindow()
 {
 	return game_window->display();
 }

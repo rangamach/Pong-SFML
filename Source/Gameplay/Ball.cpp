@@ -17,17 +17,21 @@ void Ball::initializeVariables()
 
 Ball::Ball()
 {
-	//ball_sprite.setRadius(radius);
-	//ball_sprite.setPosition(position_x, position_y);
 	loadTexture();
 	initializeVariables();
 }
 
 void Ball::update()
 {
+	move();
 }
 
 void Ball::render(RenderWindow* game_window)
 {
 	game_window->draw(pong_ball_sprite);
+}
+
+void Ball::move()
+{
+	pong_ball_sprite.move(velocity);
 }

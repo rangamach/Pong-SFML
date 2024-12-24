@@ -2,6 +2,9 @@
 
 #include "Paddle.h"
 #include "Ball.h"
+#include "../Event/EventManager.h"
+
+using namespace Eventmanager;
 
 namespace Gameplay
 {
@@ -13,6 +16,7 @@ namespace Gameplay
 		float player2_postion_x = 1250.0f;
 		float player2_postion_y = 290.0f;
 
+		EventManager* event_manager;
 		Ball* ball;
 		Paddle* player1;
 		Paddle* player2;
@@ -20,6 +24,7 @@ namespace Gameplay
 		void initialize();
 
 	public:
+		GameplayManager(EventManager* manager);
 		GameplayManager();
 		void update();
 		void render(RenderWindow* game_window);
