@@ -27,13 +27,23 @@ bool Core::GameWindowManager::isGameRunning()
 	return game_window->isOpen();
 }
 
-void Core::GameWindowManager::render()
+void Core::GameWindowManager::clearWindow()
 {
-	// Clear window with orange color (R:200, G:50, B:50, A:255)
-	game_window->clear(sf::Color(200, 50, 50, 255));
-
-	//draw shapes, sprites, etc 
-
-// Display the changes
-	game_window->display();
+	game_window->clear();
 }
+
+void Core::GameWindowManager::displayWindow()
+{
+	return game_window->display();
+}
+
+//void Core::GameWindowManager::render()
+//{
+//	// Clear window with orange color (R:200, G:50, B:50, A:255)
+//	game_window->clear(sf::Color(200, 50, 50, 255));
+//
+//	//draw shapes, sprites, etc 
+//
+//// Display the changes
+//	game_window->display();
+//}
