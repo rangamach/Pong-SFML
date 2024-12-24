@@ -5,7 +5,7 @@ using namespace Core;
 void Core::GameWindowManager::createGameWindow()
 {
 	// Create the window with specified dimensions and title
-	game_window->create(VideoMode(game_window_width, game_window_height),game_title);
+	game_window->create(VideoMode::getDesktopMode(), game_title, Style::Fullscreen);
 }
 
 void Core::GameWindowManager::initialize()
@@ -29,4 +29,11 @@ bool Core::GameWindowManager::isGameRunning()
 
 void Core::GameWindowManager::render()
 {
+	// Clear window with orange color (R:200, G:50, B:50, A:255)
+	game_window->clear(sf::Color(200, 50, 50, 255));
+
+	//draw shapes, sprites, etc 
+
+// Display the changes
+	game_window->display();
 }
