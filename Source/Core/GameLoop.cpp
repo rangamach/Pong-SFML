@@ -8,6 +8,8 @@ void GameLoop::initialize()
 	event_manager = new EventManager();
 
 	game_window_manager->initialize();
+
+	gameplay_manager = new GameplayManager();
 }
 
 bool GameLoop::isGameRunning()
@@ -27,5 +29,6 @@ void GameLoop::update()
 void GameLoop::render()
 {
 	game_window_manager->clearWindow();
+	gameplay_manager->render(game_window_manager->getGameWindow());
 	game_window_manager->displayWindow();
 }

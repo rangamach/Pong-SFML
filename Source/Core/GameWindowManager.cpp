@@ -5,7 +5,7 @@ using namespace Core;
 void Core::GameWindowManager::createGameWindow()
 {
 	// Create the window with specified dimensions and title
-	game_window->create(VideoMode::getDesktopMode(), game_title, Style::Fullscreen);
+	game_window->create(VideoMode(1280,720), game_title, Style::Close | Style::Titlebar);
 }
 
 void Core::GameWindowManager::initialize()
