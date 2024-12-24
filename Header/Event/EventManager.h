@@ -10,7 +10,7 @@ namespace Eventmanager
 	{
 	public:
 		void pollEvents(RenderWindow* game_window); // Process all events
-		bool isKeyPressed(sf::Keyboard::Key key);   // Check specific key
+		//bool isKeyPressed(sf::Keyboard::Key key);   // Check specific key
 	};
 }
 
