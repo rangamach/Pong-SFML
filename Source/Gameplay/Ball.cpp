@@ -1,6 +1,8 @@
 #include "../../Header/Gameplay/Ball.h"
+#include "../../Header/Sound/SoundManager.h"
 
 using namespace Gameplay;
+using namespace Soundmanager;
 
 void Ball::loadTexture()
 {
@@ -25,16 +27,25 @@ void Ball::handlePaddleCollision(Paddle* p1, Paddle* p2)
 	FloatRect p2PaddleBoundary = p2Paddle.getGlobalBounds();
 
 	if (ball_bounds.intersects(p1PaddleBoundary) && velocity.x < 0)
+	{
 		velocity.x = -velocity.x;
+		SoundManager::PlaySoundEffect(SoundType::Ball_Bounce);
+	}
 	if (ball_bounds.intersects(p2PaddleBoundary) && velocity.x > 0)
+	{
 		velocity.x = -velocity.x;
+		SoundManager::PlaySoundEffect(SoundType::Ball_Bounce);
+	}
 }
 
 void Ball::handleBoundaryCollision()
 {
 	FloatRect ball_bounds = pong_ball_sprite.getGlobalBounds();
 	if (ball_bounds.top <= top_boundary && velocity.y < 0 || ball_bounds.top + ball_bounds.height >= bottom_boundary && velocity.y > 0)
+	{
 		velocity.y = -velocity.y;
+		SoundManager::PlaySoundEffect(SoundType::Ball_Bounce);
+	}
 }
 
 void Ball::handleScoreCollisions()
@@ -42,11 +53,13 @@ void Ball::handleScoreCollisions()
 	FloatRect ball_bounds = pong_ball_sprite.getGlobalBounds();
 	if (ball_bounds.left <= left_boundary)
 	{
+		SoundManager::PlaySoundEffect(SoundType::Ball_Bounce);
 		updateLeftCollision(true);
 		reset();
 	}
 	else if (ball_bounds.left + ball_bounds.width >= right_boundary)
 	{
+		SoundManager::PlaySoundEffect(SoundType::Ball_Bounce);
 		updateRightCollision(true);
 		reset();
 	}
