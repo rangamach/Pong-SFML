@@ -3,9 +3,11 @@
 #include "Paddle.h"
 #include "Ball.h"
 #include "../Event/EventManager.h"
+#include "../Utility/TimeManager.h"
 #include "Boundary.h"
 
 using namespace Eventmanager;
+using namespace Utility;
 
 namespace Gameplay
 {
@@ -22,6 +24,7 @@ namespace Gameplay
 		Ball* ball;
 		Paddle* player1;
 		Paddle* player2;
+		TimeManager* time_manager;
 
 		void initialize();
 

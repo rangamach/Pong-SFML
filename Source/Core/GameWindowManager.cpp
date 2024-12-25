@@ -6,6 +6,7 @@ void GameWindowManager::createGameWindow()
 {
 	// Create the window with specified dimensions and title
 	game_window->create(VideoMode(1280,720), game_title, Style::Close | Style::Titlebar);
+	game_window->setFramerateLimit(60);
 }
 
 void GameWindowManager::initialize()

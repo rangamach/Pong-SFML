@@ -1,28 +1,30 @@
 #include "../../Header/Utility/TimeManager.h"
 
-void Utility::TimeManager::updateDeltaTime()
+using namespace Utility;
+
+void TimeManager::updateDeltaTime()
 {
 	delta_time = calculateDeltaTime();
 	updatePreviousTime();
 }
 
-void Utility::TimeManager::initialize()
+void TimeManager::initialize()
 {
 	previous_time = std::chrono::steady_clock::now();
 	delta_time = 0;
 }
 
-void Utility::TimeManager::update()
+void TimeManager::update()
 {
 	updateDeltaTime();
 }
 
-float Utility::TimeManager::getDeltaTime()
+float TimeManager::getDeltaTime()
 {
 	return delta_time;
 }
 
-float Utility::TimeManager::calculateDeltaTime()
+float TimeManager::calculateDeltaTime()
 {
 	// Get time difference in microseconds
 	int delta = std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::steady_clock::now() - previous_time).count();
@@ -30,7 +32,7 @@ float Utility::TimeManager::calculateDeltaTime()
 	return static_cast<float>(delta) / 1000000.0f;
 }
 
-void Utility::TimeManager::updatePreviousTime()
+void TimeManager::updatePreviousTime()
 {
 	previous_time = std::chrono::steady_clock::now();
 }
