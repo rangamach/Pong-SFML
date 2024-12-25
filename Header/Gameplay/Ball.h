@@ -19,6 +19,8 @@ namespace Gameplay
 		const float scale_y = 0.03f;
 		const float position_x = 615.0f;
 		const float position_y = 335.0f;
+		const float top_boundary = 20.f;
+		const float bottom_boundary = 700.f;
 
 		float ball_speed = .5f;
 		Vector2f velocity = Vector2f(ball_speed, ball_speed);
@@ -27,10 +29,11 @@ namespace Gameplay
 		void initializeVariables();
 
 		void handlePaddleCollision(Paddle* p1, Paddle* p2);
+		void handleBoundaryCollision();
 
 	public:
 		Ball();
-		void update();
+		void update(Paddle* p1, Paddle* p2);
 		void render(RenderWindow* game_window);
 		void move();
 	};

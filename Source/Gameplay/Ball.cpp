@@ -30,15 +30,24 @@ void Ball::handlePaddleCollision(Paddle* p1, Paddle* p2)
 		velocity.x = -velocity.x;
 }
 
+void Ball::handleBoundaryCollision()
+{
+	FloatRect ball_bounds = pong_ball_sprite.getGlobalBounds();
+	if (ball_bounds.top <= top_boundary && velocity.y < 0 || ball_bounds.top + ball_bounds.height >= bottom_boundary && velocity.y > 0)
+		velocity.y = -velocity.y;
+}
+
 Ball::Ball()
 {
 	loadTexture();
 	initializeVariables();
 }
 
-void Ball::update()
+void Ball::update(Paddle* p1, Paddle* p2)
 {
 	move();
+	handlePaddleCollision(p1,p2);
+	handleBoundaryCollision();
 }
 
 void Ball::render(RenderWindow* game_window)
