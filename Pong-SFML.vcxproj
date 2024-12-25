@@ -142,6 +142,7 @@
     <ClCompile Include="Source\Core\GameWindowManager.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Source\Utility\TimeManager.cpp" />
+    <ClCompile Include="Source\UI\UIService.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Header\Gameplay\Boundary.h" />
@@ -152,6 +153,7 @@
     <ClInclude Include="Header\Core\GameWindowManager.h" />
     <ClInclude Include="Header\Gameplay\Paddle.h" />
     <ClInclude Include="Header\Utility\TimeManager.h" />
+    <ClInclude Include="Header\UI\UIService.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

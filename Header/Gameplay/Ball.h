@@ -24,7 +24,7 @@ namespace Gameplay
 		const float right_boundary = 1260.f;
 		const float left_boundary = 20.f;
 
-		float ball_speed = .5f;
+		float ball_speed = 7.0f;
 		Vector2f velocity = Vector2f(ball_speed, ball_speed);
 
 		void loadTexture();

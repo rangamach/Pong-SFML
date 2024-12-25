@@ -4,6 +4,7 @@
 #include "Ball.h"
 #include "../Event/EventManager.h"
 #include "../Utility/TimeManager.h"
+#include "../UI/UIService.h"
 #include "Boundary.h"
 
 using namespace Eventmanager;
@@ -25,6 +26,7 @@ namespace Gameplay
 		Paddle* player1;
 		Paddle* player2;
 		TimeManager* time_manager;
+		UIService* ui_service = new UIService();
 
 		void initialize();
 
