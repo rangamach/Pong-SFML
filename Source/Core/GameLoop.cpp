@@ -7,6 +7,7 @@ void GameLoop::initialize()
 	game_window_manager = new GameWindowManager();
 	event_manager = new EventManager();
 	sound_manager = new SoundManager();
+	//SoundManager::PlayBackgroundMusic();
 
 	game_window_manager->initialize();
 

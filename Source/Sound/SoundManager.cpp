@@ -7,6 +7,7 @@ SoundBuffer SoundManager::ballBounce;
 Sound SoundManager::soundEffect;
 
 const string SoundManager::ballBouncePath = "Assets/Sounds/Ball_Bounce.wav";
+//const string SoundManager::bgmPath = "Assets/Sounds/Pong_BGM.mp3";
 
 void SoundManager::initialize()
 {
@@ -43,4 +44,7 @@ void SoundManager::PlaySoundEffect(SoundType soundType)
 
 void SoundManager::PlayBackgroundMusic()
 {
+	//backgroundMusic.setVolume(50.f);
+	//backgroundMusic.setLoop(true);
+	//backgroundMusic.play();
 }

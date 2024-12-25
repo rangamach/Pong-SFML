@@ -15,11 +15,11 @@ namespace Soundmanager
 	class SoundManager
 	{
 	private:
-		static Music backgroundMusic;
+		/*static Music backgroundMusic;
+		static Music BGM;*/
 		static Sound soundEffect;
 		static SoundBuffer ballBounce;
 
-		static float backfrounfMusicVolume;
 		static const string bgmPath;
 		static const string ballBouncePath;
 
