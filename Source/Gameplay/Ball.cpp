@@ -37,6 +37,21 @@ void Ball::handleBoundaryCollision()
 		velocity.y = -velocity.y;
 }
 
+void Ball::handleScoreCollisions()
+{
+	FloatRect ball_bounds = pong_ball_sprite.getGlobalBounds();
+	if (ball_bounds.left <= left_boundary)
+		reset();
+	else if (ball_bounds.left + ball_bounds.width >= right_boundary)
+		reset();
+}
+
+void Ball::reset()
+{
+	pong_ball_sprite.setPosition(position_x, position_y);
+	velocity = Vector2f(ball_speed, ball_speed);
+}
+
 Ball::Ball()
 {
 	loadTexture();
@@ -48,6 +63,7 @@ void Ball::update(Paddle* p1, Paddle* p2)
 	move();
 	handlePaddleCollision(p1,p2);
 	handleBoundaryCollision();
+	handleScoreCollisions();
 }
 
 void Ball::render(RenderWindow* game_window)
