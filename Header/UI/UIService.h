@@ -30,11 +30,11 @@ private:
 	void createLeftScoreText();
 	void createRightScoreText();
 	string formatScoreText(int score);
-	void incrementPlayer1Score();
-	void incrementPlayer2Score();
 public:
 	UIService();
 	void render(RenderWindow* game_window);
 	void update();
+	void incrementPlayer1Score();
+	void incrementPlayer2Score();
 };
 

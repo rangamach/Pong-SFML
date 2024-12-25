@@ -17,7 +17,7 @@ namespace Gameplay
 	private:
 		float player1_position_x = 30.0f;
 		float player1_position_y = 290.0f;	
-		float player2_postion_x = 1230.0f;
+		float player2_position_x = 1230.0f;
 		float player2_postion_y = 290.0f;
 
 		Boundary* boundary;
@@ -27,12 +27,14 @@ namespace Gameplay
 		Paddle* player2;
 		TimeManager* time_manager;
 		UIService* ui_service = new UIService();
+		void UpdateScore();
+		void resetPlayers();
 
 		void initialize();
 
 	public:
 		GameplayManager(EventManager* manager);
-		GameplayManager();
+		//GameplayManager();
 		void update();
 		void render(RenderWindow* game_window);
 

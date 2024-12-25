@@ -24,7 +24,10 @@ namespace Gameplay
 		const float right_boundary = 1260.f;
 		const float left_boundary = 20.f;
 
-		float ball_speed = 7.0f;
+		bool had_left_collision = false;
+		bool had_right_collision = false;
+
+		float ball_speed = 7.f;
 		Vector2f velocity = Vector2f(ball_speed, ball_speed);
 
 		void loadTexture();
@@ -37,6 +40,10 @@ namespace Gameplay
 
 	public:
 		Ball();
+		bool isLeftCollisionOccurred();
+		void updateLeftCollision(bool value);
+		bool isRightCollisionOccurred();
+		void updateRightCollision(bool value);
 		void update(Paddle* p1, Paddle* p2);
 		void render(RenderWindow* game_window);
 		void move();

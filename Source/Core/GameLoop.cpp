@@ -9,7 +9,7 @@ void GameLoop::initialize()
 
 	game_window_manager->initialize();
 
-	gameplay_manager = new GameplayManager();
+	gameplay_manager = new GameplayManager(event_manager);
 }
 
 bool GameLoop::isGameRunning()

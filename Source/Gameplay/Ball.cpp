@@ -41,9 +41,15 @@ void Ball::handleScoreCollisions()
 {
 	FloatRect ball_bounds = pong_ball_sprite.getGlobalBounds();
 	if (ball_bounds.left <= left_boundary)
+	{
+		updateLeftCollision(true);
 		reset();
+	}
 	else if (ball_bounds.left + ball_bounds.width >= right_boundary)
+	{
+		updateRightCollision(true);
 		reset();
+	}
 }
 
 void Ball::reset()
@@ -56,6 +62,26 @@ Ball::Ball()
 {
 	loadTexture();
 	initializeVariables();
+}
+
+bool Gameplay::Ball::isLeftCollisionOccurred()
+{
+	return had_left_collision;
+}
+
+void Gameplay::Ball::updateLeftCollision(bool value)
+{
+	had_left_collision = value;
+}
+
+bool Gameplay::Ball::isRightCollisionOccurred()
+{
+	return had_right_collision;
+}
+
+void Gameplay::Ball::updateRightCollision(bool value)
+{
+	had_right_collision = value;
 }
 
 void Ball::update(Paddle* p1, Paddle* p2)
