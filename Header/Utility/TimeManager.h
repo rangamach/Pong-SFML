@@ -4,7 +4,7 @@
 
 namespace Utility
 {
-	class TimeService
+	class TimeManager
 	{
 	private:
 		std::chrono::steady_clock::time_point previous_time;
