@@ -16,6 +16,7 @@ namespace Gameplay
 		const float paddleSpeed = 0.5f;
 
 		void movePaddle(bool move_up_key_pressed, bool move_down_key_pressed);
+		void paddleRestriction();
 
 	public:
 		Paddle(float position_x, float position_y);
