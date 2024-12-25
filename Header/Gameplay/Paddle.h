@@ -21,6 +21,7 @@ namespace Gameplay
 		Paddle(float position_x, float position_y);
 		void update(bool move_up_key_pressed, bool move_down_key_pressed);
 		void render(RenderWindow* game_window);
+		RectangleShape getPaddleSprite();
 	};
 }
 

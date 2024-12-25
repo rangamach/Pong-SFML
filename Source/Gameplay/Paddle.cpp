@@ -31,3 +31,8 @@ void Paddle::render(RenderWindow* game_window)
 {
 	game_window->draw(paddle_sprite);
 }
+
+RectangleShape Gameplay::Paddle::getPaddleSprite()
+{
+    return paddle_sprite;
+}

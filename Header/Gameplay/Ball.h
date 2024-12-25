@@ -1,6 +1,7 @@
 #pragma once
 
 #include "SFML/Graphics.hpp"
+#include "Paddle.h"
 
 using namespace sf;
 using namespace std;
@@ -24,6 +25,8 @@ namespace Gameplay
 
 		void loadTexture();
 		void initializeVariables();
+
+		void handlePaddleCollision(Paddle* p1, Paddle* p2);
 
 	public:
 		Ball();
